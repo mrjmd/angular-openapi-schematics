@@ -1,0 +1,9 @@
+{
+  "schematics": {
+    "openapi-module": {
+      "factory": "./module",
+      "schema": "./module/schema.json",
+      "description": "Create an OpenAPI based Angular module."
+    }
+  }
+}

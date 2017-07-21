@@ -1,0 +1,33 @@
+{
+  "name": "angular-openapi-schematics",
+  "version": "0.0.0",
+  "description": "Schematics to build an OpenAPI based Angular application",
+  "keywords": [
+    "blueprints",
+    "code generation",
+    "schematics",
+    "openapi"
+  ],
+  "schematics": "./dist/collection.json",
+  "dependencies": {
+    "ts-node": "^2.0.0",
+    "typescript": "~2.3.0",
+    "@types/node": "^6.0.36",
+    "@angular-devkit/schematics": "^0.0.8",
+    "@schematics/angular": "^0.0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrjmd/angular-openapi-schematics.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrjmd/angular-openapi-schematics/issues"
+  },
+  "homepage": "https://github.com/mrjmd/angular-openapi-schematics#readme",
+  "devDependencies": {},
+  "scripts": {
+    "prepublishOnly": "tsc -p ./ --outDir dist/"
+  },
+  "author": "Matt Davis <matt@yourdrupaldev.com>"
+}
