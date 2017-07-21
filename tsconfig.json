@@ -12,7 +12,7 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./src",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "inlineSourceMap": true,
@@ -30,11 +30,12 @@
       "node"
     ],
     "paths": {
-      "angular-openapi-schematics": [ "./index" ]
+      "angular-openapi-schematics": [ "./src/module/index" ]
     }
   },
   "exclude": [
     "dist/**/*",
-    "node_modules/**/*"
+    "node_modules/**/*",
+    "src/*/files/**/*"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "angular-openapi-schematics",
-  "version": "0.0.0",
+  "version": "0.0.9",
   "description": "Schematics to build an OpenAPI based Angular application",
   "keywords": [
     "blueprints",
@@ -8,10 +8,12 @@
     "schematics",
     "openapi"
   ],
-  "schematics": "./dist/collection.json",
+  "schematics": "./collection.json",
   "dependencies": {
     "ts-node": "^2.0.0",
     "typescript": "~2.3.0",
+    "@types/common-tags": "^1.2.4",
+    "@types/glob": "^5.0.29",
     "@types/node": "^6.0.36",
     "@angular-devkit/schematics": "^0.0.8",
     "@schematics/angular": "^0.0.8"
@@ -25,9 +27,14 @@
     "url": "https://github.com/mrjmd/angular-openapi-schematics/issues"
   },
   "homepage": "https://github.com/mrjmd/angular-openapi-schematics#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "rimraf": "^2.5.4",
+    "del": "^3.0.0"
+  },
+  "main": "./module/index.js",
   "scripts": {
-    "prepublishOnly": "tsc -p ./ --outDir dist/"
+    "prepublishOnly": "rimraf dist && mkdir dist && node tools/copy-package.js && node tools/cleanup.js && tsc",
+    "publish": "npm run prepublishOnly && cd ./dist && npm publish"
   },
   "author": "Matt Davis <matt@yourdrupaldev.com>"
 }
